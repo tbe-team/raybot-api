@@ -1,0 +1,15 @@
+[project]
+name = "raybot-api"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "grpcio>=1.70.0",
+    "protobuf~=5.29.3",
+]
+
+[dependency-groups]
+dev = [
+    "types-protobuf~=5.29",
+]

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package raybot.v1;
+
+service AuthService {
+  rpc GetSession(GetSessionRequest) returns (GetSessionResponse) {}
+}
+
+message GetSessionRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message GetSessionResponse {
+  string session_id = 1;
+}

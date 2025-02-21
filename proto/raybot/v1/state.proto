@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package raybot.v1;
+
+service RobotStateService {
+  rpc GetRobotState(GetRobotStateRequest) returns (GetRobotStateResponse) {}
+}
+
+message GetRobotStateRequest {}
+
+message GetRobotStateResponse {
+  RobotState robot_state = 1;
+}
+
+// RobotState represents the state of the robot.
+message RobotState {
+  // Current state of the battery
+  BatteryState battery_state = 1;
+
+  // Current state of the wifi
+  WifiState wifi_state = 2;
+
+  // Current sensor data
+  SensorData sensor_data = 3;
+
+  // Current position data
+  PositionData position_data = 4;
+}
+
+message BatteryState {
+  // Charge percentage (0-100)
+  double charge_percentage = 1;
+
+  // Current (mA)
+  double current = 2;
+
+  // Voltage (mV)
+  double voltage = 3;
+
+  // Temperature (℃)
+  double temperature = 4;
+
+  enum Status {
+    // The battery status is unknown
+    STATUS_UNSPECIFIED = 0;
+
+    // The battery is charging
+    STATUS_CHARGING = 1;
+
+    // The battery is discharging
+    STATUS_DISCHARGING = 2;
+  }
+  // Current status of the battery
+  Status status = 5;
+}
+
+message WifiState {
+  enum Mode {
+    // The wifi mode is unknown
+    MODE_UNSPECIFIED = 0;
+
+    // The robot is in STA mode
+    MODE_STA = 1;
+  }
+  // Current mode of the wifi
+  Mode current_mode = 1;
+
+  // Current SSID of the wifi
+  string ssid = 2;
+}
+
+message SensorData {
+  // Front distance (cm)
+  double front_distance = 1;
+
+  // Rear distance (cm)
+  double rear_distance = 2;
+
+  // Drop distance (cm)
+  double drop_distance = 3;
+}
+
+// PositionData represents the position of the robot (Read from RFID).
+message PositionData {
+  // Current location
+  string current_location = 1;
+
+  // Target location
+  optional string target_location = 2;
+}

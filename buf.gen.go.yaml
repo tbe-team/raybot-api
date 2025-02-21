@@ -3,8 +3,7 @@ managed:
   enabled: true
   override:
     - file_option: go_package_prefix
-      value: "github.com/tbe-team/raybot-sdk"
-
+      value: "github.com/tbe-team/raybot/proto/raybot/v1"
 plugins:
   - remote: buf.build/protocolbuffers/go:v1.31.0
     out: go

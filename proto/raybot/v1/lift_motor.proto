@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package raybot.v1;
+
+service LiftMotorService {
+  rpc SetLiftMotorConfiguration(SetLiftMotorConfigurationRequest) returns (SetLiftMotorConfigurationResponse) {}
+}
+
+message SetLiftMotorConfigurationRequest {
+  // Distance calculated from the bottom of the robot to the top of the carry box.
+  double distance = 1;
+
+  enum Direction {
+    // The direction is unknown
+    DIRECTION_UNSPECIFIED = 0;
+
+    // The motor is moving up
+    DIRECTION_UP = 1;
+
+    // The motor is moving down
+    DIRECTION_DOWN = 2;
+  }
+  // Direction of the motor
+  Direction direction = 2;
+}
+
+message SetLiftMotorConfigurationResponse {}

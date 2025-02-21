@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package raybot.v1;
+
+service SystemService {
+  // EmergencyStop force robot stop all the service.
+  rpc EmergencyStop(EmergencyStopRequest) returns (EmergencyStopResponse) {}
+}
+
+message EmergencyStopRequest {}
+
+message EmergencyStopResponse {}

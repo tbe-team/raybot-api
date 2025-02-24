@@ -1,4 +1,4 @@
-name: spelling
+name: Spelling
 on: pull_request
 jobs:
   spelling:

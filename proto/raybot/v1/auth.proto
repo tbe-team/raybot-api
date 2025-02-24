@@ -2,15 +2,34 @@ syntax = "proto3";
 
 package raybot.v1;
 
+// Auth service for managing client sessions and heartbeats
 service AuthService {
+  // GetSession gets the session for the given username and password
   rpc GetSession(GetSessionRequest) returns (GetSessionResponse) {}
+
+  // SendHeartbeat sends a heartbeat to the server
+  rpc SendHeartbeat(SendHeartbeatRequest) returns (SendHeartbeatResponse) {}
 }
 
+// GetSessionRequest is sent by the client to the server to get a session
 message GetSessionRequest {
+  // Username
   string username = 1;
+  // Password
   string password = 2;
 }
 
+// GetSessionResponse is sent by the server to the client to confirm the session
 message GetSessionResponse {
+  // Session ID
   string session_id = 1;
+  // Heartbeat window, in seconds
+  // The client must send a heartbeat within this window to keep the session alive
+  uint32 heartbeat_window = 2;
 }
+
+// SendHeartbeatRequest is sent by the client to the server to keep the session alive
+message SendHeartbeatRequest {}
+
+// SendHeartbeatResponse is sent by the server to the client to confirm the heartbeat
+message SendHeartbeatResponse {}

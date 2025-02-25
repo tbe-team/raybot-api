@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package tunnel.v1;
+
+// TunnelService provides bidirectional tunneling capabilities for sending raw bytes
+// between client and server.
+service TunnelService {
+  // Tunnel establishes a bidirectional tunnel connection that allows sending and
+  // receiving arbitrary byte streams between the client and server.
+  rpc Tunnel(stream TunnelRequest) returns (stream TunnelResponse) {}
+}
+
+// TunnelRequest represents a client request to send data through the tunnel.
+message TunnelRequest {
+  // The data to be sent to the tunnel.
+  bytes data = 1;
+}
+
+// TunnelResponse represents the server's response containing data sent back through the tunnel.
+message TunnelResponse {
+  // The data received from the tunnel.
+  bytes data = 1;
+}

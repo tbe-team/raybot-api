@@ -7,21 +7,11 @@ service LiftMotorService {
 }
 
 message SetLiftMotorConfigurationRequest {
-  // Distance calculated from the bottom of the robot to the top of the carry box.
-  double distance = 1;
+  // Target position
+  uint32 target_position = 1;
 
-  enum Direction {
-    // The direction is unknown
-    DIRECTION_UNSPECIFIED = 0;
-
-    // The motor is moving up
-    DIRECTION_UP = 1;
-
-    // The motor is moving down
-    DIRECTION_DOWN = 2;
-  }
-  // Direction of the motor
-  Direction direction = 2;
+  // Enabled
+  optional bool enabled = 2;
 }
 
 message SetLiftMotorConfigurationResponse {}

@@ -17,28 +17,28 @@ message RobotState {
   // Current state of the battery
   BatteryState battery_state = 1;
 
-  // Current state of the wifi
-  WifiState wifi_state = 2;
+  // Current distance sensor data
+  DistanceSensorData distance_sensor_data = 2;
 
-  // Current sensor data
-  SensorData sensor_data = 3;
+  // Current lift motor state
+  LiftMotorState lift_motor_state = 3;
 
-  // Current position data
-  PositionData position_data = 4;
+  // Current drive motor state
+  DriveMotorState drive_motor_state = 4;
 }
 
 message BatteryState {
-  // Charge percentage (0-100)
-  double charge_percentage = 1;
-
   // Current (mA)
-  double current = 2;
+  uint32 current = 2;
 
   // Voltage (mV)
-  double voltage = 3;
+  uint32 voltage = 3;
 
   // Temperature (℃)
-  double temperature = 4;
+  uint32 temperature = 4;
+
+  // Charge percentage (0-100)
+  uint32 charge_percentage = 1;
 
   enum Status {
     // The battery status is unknown
@@ -54,37 +54,48 @@ message BatteryState {
   Status status = 5;
 }
 
-message WifiState {
-  enum Mode {
-    // The wifi mode is unknown
-    MODE_UNSPECIFIED = 0;
-
-    // The robot is in STA mode
-    MODE_STA = 1;
-  }
-  // Current mode of the wifi
-  Mode current_mode = 1;
-
-  // Current SSID of the wifi
-  string ssid = 2;
-}
-
-message SensorData {
+message DistanceSensorData {
   // Front distance (cm)
-  double front_distance = 1;
+  uint32 front_distance = 1;
 
-  // Rear distance (cm)
-  double rear_distance = 2;
+  // Back distance (cm)
+  uint32 back_distance = 2;
 
-  // Drop distance (cm)
-  double drop_distance = 3;
+  // Down distance (cm)
+  uint32 down_distance = 3;
 }
 
-// PositionData represents the position of the robot (Read from RFID).
-message PositionData {
-  // Current location
-  string current_location = 1;
+// LiftMotorState represents the state of the lift motor.
+message LiftMotorState {
+  // Current position
+  uint32 current_position = 3;
 
-  // Target location
-  optional string target_location = 2;
+  // Target position
+  uint32 target_position = 4;
+
+  // Is running
+  bool is_running = 5;
+
+  // Enabled
+  bool enabled = 6;
+}
+
+// DriveMotorState represents the state of the drive motor.
+message DriveMotorState {
+  enum Direction {
+    DIRECTION_UNSPECIFIED = 0;
+    DIRECTION_FORWARD = 1;
+    DIRECTION_BACKWARD = 2;
+  }
+  // Current direction
+  Direction direction = 1;
+
+  // Current speed
+  uint32 speed = 2;
+
+  // Is running
+  bool is_running = 5;
+
+  // Enabled
+  bool enabled = 6;
 }

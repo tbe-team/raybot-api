@@ -11,7 +11,7 @@ message SetLiftMotorConfigurationRequest {
   uint32 target_position = 1;
 
   // Enabled
-  optional bool enabled = 2;
+  bool enabled = 2;
 }
 
 message SetLiftMotorConfigurationResponse {}

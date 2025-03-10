@@ -24,7 +24,7 @@ message SetDriveMotorConfigurationRequest {
   Direction direction = 2;
 
   // Enabled
-  optional bool enabled = 3;
+  bool enabled = 3;
 }
 
 message SetDriveMotorConfigurationResponse {}

@@ -39,19 +39,6 @@ message BatteryState {
 
   // Charge percentage (0-100)
   uint32 charge_percentage = 1;
-
-  enum Status {
-    // The battery status is unknown
-    STATUS_UNSPECIFIED = 0;
-
-    // The battery is charging
-    STATUS_CHARGING = 1;
-
-    // The battery is discharging
-    STATUS_DISCHARGING = 2;
-  }
-  // Current status of the battery
-  Status status = 5;
 }
 
 message DistanceSensorData {

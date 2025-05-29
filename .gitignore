@@ -1,5 +1,28 @@
-*.DS_Store
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+_obj
+_test
+vendor
+
+*.exe
+*.test
+*.prof
+*.pprof
+*.out
+*.log
+
+/bin
+coverage.out
+coverage.html
+
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
 
 .env
 
-.venv
+/logs

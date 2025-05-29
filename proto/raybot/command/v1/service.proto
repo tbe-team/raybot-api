@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package command.v1;
+
+import "command/v1/command.proto";
+
+option go_package = "github.com/tbe-team/raybot/command/v1";
+
+service CommandService {
+  // CreateCommand creates a new command.
+  rpc CreateCommand(CreateCommandRequest) returns (CreateCommandResponse) {}
+
+  // GetCommand gets a command by its ID.
+  rpc GetCommand(GetCommandRequest) returns (GetCommandResponse) {}
+}

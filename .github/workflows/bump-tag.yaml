@@ -16,6 +16,6 @@ jobs:
       - name: Bump tag
         uses: anothrNick/github-tag-action@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.REPO_RW_TOKEN }}
           WITH_V: true
           DEFAULT_BUMP: patch

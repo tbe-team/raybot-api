@@ -64,7 +64,9 @@ message BottomObstacleTracking {
 message CargoLowerInputs {
   uint32 position = 1;
   uint32 motor_speed = 2;
-  BottomObstacleTracking bottom_obstacle_tracking = 3;
+
+  // Deprecated: BottomObstacleTracking is no longer needed due to new command configuration.
+  BottomObstacleTracking bottom_obstacle_tracking = 3 [deprecated = true];
 }
 
 message CargoCheckQRInputs {

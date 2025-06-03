@@ -673,9 +673,12 @@ func (x *BottomObstacleTracking) GetExitDistance() uint32 {
 }
 
 type CargoLowerInputs struct {
-	state                  protoimpl.MessageState  `protogen:"open.v1"`
-	Position               uint32                  `protobuf:"varint,1,opt,name=position,proto3" json:"position,omitempty"`
-	MotorSpeed             uint32                  `protobuf:"varint,2,opt,name=motor_speed,json=motorSpeed,proto3" json:"motor_speed,omitempty"`
+	state      protoimpl.MessageState `protogen:"open.v1"`
+	Position   uint32                 `protobuf:"varint,1,opt,name=position,proto3" json:"position,omitempty"`
+	MotorSpeed uint32                 `protobuf:"varint,2,opt,name=motor_speed,json=motorSpeed,proto3" json:"motor_speed,omitempty"`
+	// Deprecated: BottomObstacleTracking is no longer needed due to new command configuration.
+	//
+	// Deprecated: Marked as deprecated in command/v1/inputs.proto.
 	BottomObstacleTracking *BottomObstacleTracking `protobuf:"bytes,3,opt,name=bottom_obstacle_tracking,json=bottomObstacleTracking,proto3" json:"bottom_obstacle_tracking,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
@@ -725,6 +728,7 @@ func (x *CargoLowerInputs) GetMotorSpeed() uint32 {
 	return 0
 }
 
+// Deprecated: Marked as deprecated in command/v1/inputs.proto.
 func (x *CargoLowerInputs) GetBottomObstacleTracking() *BottomObstacleTracking {
 	if x != nil {
 		return x.BottomObstacleTracking
@@ -909,12 +913,12 @@ const file_command_v1_inputs_proto_rawDesc = "" +
 	"motorSpeed\"d\n" +
 	"\x16BottomObstacleTracking\x12%\n" +
 	"\x0eenter_distance\x18\x01 \x01(\rR\renterDistance\x12#\n" +
-	"\rexit_distance\x18\x02 \x01(\rR\fexitDistance\"\xad\x01\n" +
+	"\rexit_distance\x18\x02 \x01(\rR\fexitDistance\"\xb1\x01\n" +
 	"\x10CargoLowerInputs\x12\x1a\n" +
 	"\bposition\x18\x01 \x01(\rR\bposition\x12\x1f\n" +
 	"\vmotor_speed\x18\x02 \x01(\rR\n" +
-	"motorSpeed\x12\\\n" +
-	"\x18bottom_obstacle_tracking\x18\x03 \x01(\v2\".command.v1.BottomObstacleTrackingR\x16bottomObstacleTracking\"-\n" +
+	"motorSpeed\x12`\n" +
+	"\x18bottom_obstacle_tracking\x18\x03 \x01(\v2\".command.v1.BottomObstacleTrackingB\x02\x18\x01R\x16bottomObstacleTracking\"-\n" +
 	"\x12CargoCheckQRInputs\x12\x17\n" +
 	"\aqr_code\x18\x01 \x01(\tR\x06qrCode\"\x14\n" +
 	"\x12ScanLocationInputs\"-\n" +

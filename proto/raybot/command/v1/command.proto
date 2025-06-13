@@ -8,14 +8,26 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/tbe-team/raybot/command/v1";
 
-message GetCommandRequest {
-  int64 id = 1;
-}
-
 message CreateCommandRequest {
   CommandType type = 1;
   CommandInputs inputs = 2;
 }
+
+message CreateCommandResponse {
+  Command command = 1;
+}
+
+message GetCommandRequest {
+  int64 id = 1;
+}
+
+message GetCommandResponse {
+  Command command = 1;
+}
+
+message CancelCurrentProcessingCommandRequest {}
+
+message CancelCurrentProcessingCommandResponse {}
 
 message Command {
   int64 id = 1;
@@ -29,14 +41,6 @@ message Command {
   optional google.protobuf.Timestamp completed_at = 9;
   google.protobuf.Timestamp created_at = 10;
   google.protobuf.Timestamp updated_at = 11;
-}
-
-message CreateCommandResponse {
-  Command command = 1;
-}
-
-message GetCommandResponse {
-  Command command = 1;
 }
 
 enum CommandType {

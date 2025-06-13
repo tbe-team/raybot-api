@@ -19,8 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CommandService_CreateCommand_FullMethodName = "/command.v1.CommandService/CreateCommand"
-	CommandService_GetCommand_FullMethodName    = "/command.v1.CommandService/GetCommand"
+	CommandService_CreateCommand_FullMethodName                  = "/command.v1.CommandService/CreateCommand"
+	CommandService_GetCommand_FullMethodName                     = "/command.v1.CommandService/GetCommand"
+	CommandService_CancelCurrentProcessingCommand_FullMethodName = "/command.v1.CommandService/CancelCurrentProcessingCommand"
 )
 
 // CommandServiceClient is the client API for CommandService service.
@@ -31,6 +32,8 @@ type CommandServiceClient interface {
 	CreateCommand(ctx context.Context, in *CreateCommandRequest, opts ...grpc.CallOption) (*CreateCommandResponse, error)
 	// GetCommand gets a command by its ID.
 	GetCommand(ctx context.Context, in *GetCommandRequest, opts ...grpc.CallOption) (*GetCommandResponse, error)
+	// CancelCurrentProcessingCommand cancels the current processing command.
+	CancelCurrentProcessingCommand(ctx context.Context, in *CancelCurrentProcessingCommandRequest, opts ...grpc.CallOption) (*CancelCurrentProcessingCommandResponse, error)
 }
 
 type commandServiceClient struct {
@@ -61,6 +64,16 @@ func (c *commandServiceClient) GetCommand(ctx context.Context, in *GetCommandReq
 	return out, nil
 }
 
+func (c *commandServiceClient) CancelCurrentProcessingCommand(ctx context.Context, in *CancelCurrentProcessingCommandRequest, opts ...grpc.CallOption) (*CancelCurrentProcessingCommandResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CancelCurrentProcessingCommandResponse)
+	err := c.cc.Invoke(ctx, CommandService_CancelCurrentProcessingCommand_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CommandServiceServer is the server API for CommandService service.
 // All implementations must embed UnimplementedCommandServiceServer
 // for forward compatibility.
@@ -69,6 +82,8 @@ type CommandServiceServer interface {
 	CreateCommand(context.Context, *CreateCommandRequest) (*CreateCommandResponse, error)
 	// GetCommand gets a command by its ID.
 	GetCommand(context.Context, *GetCommandRequest) (*GetCommandResponse, error)
+	// CancelCurrentProcessingCommand cancels the current processing command.
+	CancelCurrentProcessingCommand(context.Context, *CancelCurrentProcessingCommandRequest) (*CancelCurrentProcessingCommandResponse, error)
 	mustEmbedUnimplementedCommandServiceServer()
 }
 
@@ -84,6 +99,9 @@ func (UnimplementedCommandServiceServer) CreateCommand(context.Context, *CreateC
 }
 func (UnimplementedCommandServiceServer) GetCommand(context.Context, *GetCommandRequest) (*GetCommandResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCommand not implemented")
+}
+func (UnimplementedCommandServiceServer) CancelCurrentProcessingCommand(context.Context, *CancelCurrentProcessingCommandRequest) (*CancelCurrentProcessingCommandResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CancelCurrentProcessingCommand not implemented")
 }
 func (UnimplementedCommandServiceServer) mustEmbedUnimplementedCommandServiceServer() {}
 func (UnimplementedCommandServiceServer) testEmbeddedByValue()                        {}
@@ -142,6 +160,24 @@ func _CommandService_GetCommand_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CommandService_CancelCurrentProcessingCommand_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CancelCurrentProcessingCommandRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CommandServiceServer).CancelCurrentProcessingCommand(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: CommandService_CancelCurrentProcessingCommand_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CommandServiceServer).CancelCurrentProcessingCommand(ctx, req.(*CancelCurrentProcessingCommandRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CommandService_ServiceDesc is the grpc.ServiceDesc for CommandService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -156,6 +192,10 @@ var CommandService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCommand",
 			Handler:    _CommandService_GetCommand_Handler,
+		},
+		{
+			MethodName: "CancelCurrentProcessingCommand",
+			Handler:    _CommandService_CancelCurrentProcessingCommand_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

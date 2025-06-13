@@ -208,50 +208,6 @@ func (CommandSource) EnumDescriptor() ([]byte, []int) {
 	return file_command_v1_command_proto_rawDescGZIP(), []int{2}
 }
 
-type GetCommandRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *GetCommandRequest) Reset() {
-	*x = GetCommandRequest{}
-	mi := &file_command_v1_command_proto_msgTypes[0]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *GetCommandRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetCommandRequest) ProtoMessage() {}
-
-func (x *GetCommandRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_command_v1_command_proto_msgTypes[0]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetCommandRequest.ProtoReflect.Descriptor instead.
-func (*GetCommandRequest) Descriptor() ([]byte, []int) {
-	return file_command_v1_command_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *GetCommandRequest) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
-}
-
 type CreateCommandRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Type          CommandType            `protobuf:"varint,1,opt,name=type,proto3,enum=command.v1.CommandType" json:"type,omitempty"`
@@ -262,7 +218,7 @@ type CreateCommandRequest struct {
 
 func (x *CreateCommandRequest) Reset() {
 	*x = CreateCommandRequest{}
-	mi := &file_command_v1_command_proto_msgTypes[1]
+	mi := &file_command_v1_command_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -274,7 +230,7 @@ func (x *CreateCommandRequest) String() string {
 func (*CreateCommandRequest) ProtoMessage() {}
 
 func (x *CreateCommandRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_command_v1_command_proto_msgTypes[1]
+	mi := &file_command_v1_command_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -287,7 +243,7 @@ func (x *CreateCommandRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCommandRequest.ProtoReflect.Descriptor instead.
 func (*CreateCommandRequest) Descriptor() ([]byte, []int) {
-	return file_command_v1_command_proto_rawDescGZIP(), []int{1}
+	return file_command_v1_command_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateCommandRequest) GetType() CommandType {
@@ -302,6 +258,210 @@ func (x *CreateCommandRequest) GetInputs() *CommandInputs {
 		return x.Inputs
 	}
 	return nil
+}
+
+type CreateCommandResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Command       *Command               `protobuf:"bytes,1,opt,name=command,proto3" json:"command,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateCommandResponse) Reset() {
+	*x = CreateCommandResponse{}
+	mi := &file_command_v1_command_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateCommandResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateCommandResponse) ProtoMessage() {}
+
+func (x *CreateCommandResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_command_v1_command_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateCommandResponse.ProtoReflect.Descriptor instead.
+func (*CreateCommandResponse) Descriptor() ([]byte, []int) {
+	return file_command_v1_command_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *CreateCommandResponse) GetCommand() *Command {
+	if x != nil {
+		return x.Command
+	}
+	return nil
+}
+
+type GetCommandRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCommandRequest) Reset() {
+	*x = GetCommandRequest{}
+	mi := &file_command_v1_command_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCommandRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCommandRequest) ProtoMessage() {}
+
+func (x *GetCommandRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_command_v1_command_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCommandRequest.ProtoReflect.Descriptor instead.
+func (*GetCommandRequest) Descriptor() ([]byte, []int) {
+	return file_command_v1_command_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *GetCommandRequest) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type GetCommandResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Command       *Command               `protobuf:"bytes,1,opt,name=command,proto3" json:"command,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCommandResponse) Reset() {
+	*x = GetCommandResponse{}
+	mi := &file_command_v1_command_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCommandResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCommandResponse) ProtoMessage() {}
+
+func (x *GetCommandResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_command_v1_command_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCommandResponse.ProtoReflect.Descriptor instead.
+func (*GetCommandResponse) Descriptor() ([]byte, []int) {
+	return file_command_v1_command_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *GetCommandResponse) GetCommand() *Command {
+	if x != nil {
+		return x.Command
+	}
+	return nil
+}
+
+type CancelCurrentProcessingCommandRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CancelCurrentProcessingCommandRequest) Reset() {
+	*x = CancelCurrentProcessingCommandRequest{}
+	mi := &file_command_v1_command_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CancelCurrentProcessingCommandRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CancelCurrentProcessingCommandRequest) ProtoMessage() {}
+
+func (x *CancelCurrentProcessingCommandRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_command_v1_command_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CancelCurrentProcessingCommandRequest.ProtoReflect.Descriptor instead.
+func (*CancelCurrentProcessingCommandRequest) Descriptor() ([]byte, []int) {
+	return file_command_v1_command_proto_rawDescGZIP(), []int{4}
+}
+
+type CancelCurrentProcessingCommandResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CancelCurrentProcessingCommandResponse) Reset() {
+	*x = CancelCurrentProcessingCommandResponse{}
+	mi := &file_command_v1_command_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CancelCurrentProcessingCommandResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CancelCurrentProcessingCommandResponse) ProtoMessage() {}
+
+func (x *CancelCurrentProcessingCommandResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_command_v1_command_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CancelCurrentProcessingCommandResponse.ProtoReflect.Descriptor instead.
+func (*CancelCurrentProcessingCommandResponse) Descriptor() ([]byte, []int) {
+	return file_command_v1_command_proto_rawDescGZIP(), []int{5}
 }
 
 type Command struct {
@@ -323,7 +483,7 @@ type Command struct {
 
 func (x *Command) Reset() {
 	*x = Command{}
-	mi := &file_command_v1_command_proto_msgTypes[2]
+	mi := &file_command_v1_command_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -335,7 +495,7 @@ func (x *Command) String() string {
 func (*Command) ProtoMessage() {}
 
 func (x *Command) ProtoReflect() protoreflect.Message {
-	mi := &file_command_v1_command_proto_msgTypes[2]
+	mi := &file_command_v1_command_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -348,7 +508,7 @@ func (x *Command) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Command.ProtoReflect.Descriptor instead.
 func (*Command) Descriptor() ([]byte, []int) {
-	return file_command_v1_command_proto_rawDescGZIP(), []int{2}
+	return file_command_v1_command_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *Command) GetId() int64 {
@@ -428,105 +588,23 @@ func (x *Command) GetUpdatedAt() *timestamppb.Timestamp {
 	return nil
 }
 
-type CreateCommandResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Command       *Command               `protobuf:"bytes,1,opt,name=command,proto3" json:"command,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *CreateCommandResponse) Reset() {
-	*x = CreateCommandResponse{}
-	mi := &file_command_v1_command_proto_msgTypes[3]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *CreateCommandResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateCommandResponse) ProtoMessage() {}
-
-func (x *CreateCommandResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_command_v1_command_proto_msgTypes[3]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateCommandResponse.ProtoReflect.Descriptor instead.
-func (*CreateCommandResponse) Descriptor() ([]byte, []int) {
-	return file_command_v1_command_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *CreateCommandResponse) GetCommand() *Command {
-	if x != nil {
-		return x.Command
-	}
-	return nil
-}
-
-type GetCommandResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Command       *Command               `protobuf:"bytes,1,opt,name=command,proto3" json:"command,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *GetCommandResponse) Reset() {
-	*x = GetCommandResponse{}
-	mi := &file_command_v1_command_proto_msgTypes[4]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *GetCommandResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetCommandResponse) ProtoMessage() {}
-
-func (x *GetCommandResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_command_v1_command_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetCommandResponse.ProtoReflect.Descriptor instead.
-func (*GetCommandResponse) Descriptor() ([]byte, []int) {
-	return file_command_v1_command_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *GetCommandResponse) GetCommand() *Command {
-	if x != nil {
-		return x.Command
-	}
-	return nil
-}
-
 var File_command_v1_command_proto protoreflect.FileDescriptor
 
 const file_command_v1_command_proto_rawDesc = "" +
 	"\n" +
 	"\x18command/v1/command.proto\x12\n" +
-	"command.v1\x1a\x17command/v1/inputs.proto\x1a\x18command/v1/outputs.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"#\n" +
-	"\x11GetCommandRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x03R\x02id\"v\n" +
+	"command.v1\x1a\x17command/v1/inputs.proto\x1a\x18command/v1/outputs.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"v\n" +
 	"\x14CreateCommandRequest\x12+\n" +
 	"\x04type\x18\x01 \x01(\x0e2\x17.command.v1.CommandTypeR\x04type\x121\n" +
-	"\x06inputs\x18\x02 \x01(\v2\x19.command.v1.CommandInputsR\x06inputs\"\xd4\x04\n" +
+	"\x06inputs\x18\x02 \x01(\v2\x19.command.v1.CommandInputsR\x06inputs\"F\n" +
+	"\x15CreateCommandResponse\x12-\n" +
+	"\acommand\x18\x01 \x01(\v2\x13.command.v1.CommandR\acommand\"#\n" +
+	"\x11GetCommandRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id\"C\n" +
+	"\x12GetCommandResponse\x12-\n" +
+	"\acommand\x18\x01 \x01(\v2\x13.command.v1.CommandR\acommand\"'\n" +
+	"%CancelCurrentProcessingCommandRequest\"(\n" +
+	"&CancelCurrentProcessingCommandResponse\"\xd4\x04\n" +
 	"\aCommand\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12+\n" +
 	"\x04type\x18\x02 \x01(\x0e2\x17.command.v1.CommandTypeR\x04type\x121\n" +
@@ -545,11 +623,7 @@ const file_command_v1_command_proto_rawDesc = "" +
 	"updated_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAtB\b\n" +
 	"\x06_errorB\r\n" +
 	"\v_started_atB\x0f\n" +
-	"\r_completed_at\"F\n" +
-	"\x15CreateCommandResponse\x12-\n" +
-	"\acommand\x18\x01 \x01(\v2\x13.command.v1.CommandR\acommand\"C\n" +
-	"\x12GetCommandResponse\x12-\n" +
-	"\acommand\x18\x01 \x01(\v2\x13.command.v1.CommandR\acommand*\xf2\x02\n" +
+	"\r_completed_at*\xf2\x02\n" +
 	"\vCommandType\x12\x1c\n" +
 	"\x18COMMAND_TYPE_UNSPECIFIED\x10\x00\x12\x1e\n" +
 	"\x1aCOMMAND_TYPE_STOP_MOVEMENT\x10\x01\x12\x1d\n" +
@@ -590,34 +664,36 @@ func file_command_v1_command_proto_rawDescGZIP() []byte {
 }
 
 var file_command_v1_command_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_command_v1_command_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_command_v1_command_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_command_v1_command_proto_goTypes = []any{
-	(CommandType)(0),              // 0: command.v1.CommandType
-	(CommandStatus)(0),            // 1: command.v1.CommandStatus
-	(CommandSource)(0),            // 2: command.v1.CommandSource
-	(*GetCommandRequest)(nil),     // 3: command.v1.GetCommandRequest
-	(*CreateCommandRequest)(nil),  // 4: command.v1.CreateCommandRequest
-	(*Command)(nil),               // 5: command.v1.Command
-	(*CreateCommandResponse)(nil), // 6: command.v1.CreateCommandResponse
-	(*GetCommandResponse)(nil),    // 7: command.v1.GetCommandResponse
-	(*CommandInputs)(nil),         // 8: command.v1.CommandInputs
-	(*CommandOutputs)(nil),        // 9: command.v1.CommandOutputs
-	(*timestamppb.Timestamp)(nil), // 10: google.protobuf.Timestamp
+	(CommandType)(0),                               // 0: command.v1.CommandType
+	(CommandStatus)(0),                             // 1: command.v1.CommandStatus
+	(CommandSource)(0),                             // 2: command.v1.CommandSource
+	(*CreateCommandRequest)(nil),                   // 3: command.v1.CreateCommandRequest
+	(*CreateCommandResponse)(nil),                  // 4: command.v1.CreateCommandResponse
+	(*GetCommandRequest)(nil),                      // 5: command.v1.GetCommandRequest
+	(*GetCommandResponse)(nil),                     // 6: command.v1.GetCommandResponse
+	(*CancelCurrentProcessingCommandRequest)(nil),  // 7: command.v1.CancelCurrentProcessingCommandRequest
+	(*CancelCurrentProcessingCommandResponse)(nil), // 8: command.v1.CancelCurrentProcessingCommandResponse
+	(*Command)(nil),                                // 9: command.v1.Command
+	(*CommandInputs)(nil),                          // 10: command.v1.CommandInputs
+	(*CommandOutputs)(nil),                         // 11: command.v1.CommandOutputs
+	(*timestamppb.Timestamp)(nil),                  // 12: google.protobuf.Timestamp
 }
 var file_command_v1_command_proto_depIdxs = []int32{
 	0,  // 0: command.v1.CreateCommandRequest.type:type_name -> command.v1.CommandType
-	8,  // 1: command.v1.CreateCommandRequest.inputs:type_name -> command.v1.CommandInputs
-	0,  // 2: command.v1.Command.type:type_name -> command.v1.CommandType
-	1,  // 3: command.v1.Command.status:type_name -> command.v1.CommandStatus
-	2,  // 4: command.v1.Command.source:type_name -> command.v1.CommandSource
-	8,  // 5: command.v1.Command.inputs:type_name -> command.v1.CommandInputs
-	9,  // 6: command.v1.Command.outputs:type_name -> command.v1.CommandOutputs
-	10, // 7: command.v1.Command.started_at:type_name -> google.protobuf.Timestamp
-	10, // 8: command.v1.Command.completed_at:type_name -> google.protobuf.Timestamp
-	10, // 9: command.v1.Command.created_at:type_name -> google.protobuf.Timestamp
-	10, // 10: command.v1.Command.updated_at:type_name -> google.protobuf.Timestamp
-	5,  // 11: command.v1.CreateCommandResponse.command:type_name -> command.v1.Command
-	5,  // 12: command.v1.GetCommandResponse.command:type_name -> command.v1.Command
+	10, // 1: command.v1.CreateCommandRequest.inputs:type_name -> command.v1.CommandInputs
+	9,  // 2: command.v1.CreateCommandResponse.command:type_name -> command.v1.Command
+	9,  // 3: command.v1.GetCommandResponse.command:type_name -> command.v1.Command
+	0,  // 4: command.v1.Command.type:type_name -> command.v1.CommandType
+	1,  // 5: command.v1.Command.status:type_name -> command.v1.CommandStatus
+	2,  // 6: command.v1.Command.source:type_name -> command.v1.CommandSource
+	10, // 7: command.v1.Command.inputs:type_name -> command.v1.CommandInputs
+	11, // 8: command.v1.Command.outputs:type_name -> command.v1.CommandOutputs
+	12, // 9: command.v1.Command.started_at:type_name -> google.protobuf.Timestamp
+	12, // 10: command.v1.Command.completed_at:type_name -> google.protobuf.Timestamp
+	12, // 11: command.v1.Command.created_at:type_name -> google.protobuf.Timestamp
+	12, // 12: command.v1.Command.updated_at:type_name -> google.protobuf.Timestamp
 	13, // [13:13] is the sub-list for method output_type
 	13, // [13:13] is the sub-list for method input_type
 	13, // [13:13] is the sub-list for extension type_name
@@ -632,14 +708,14 @@ func file_command_v1_command_proto_init() {
 	}
 	file_command_v1_inputs_proto_init()
 	file_command_v1_outputs_proto_init()
-	file_command_v1_command_proto_msgTypes[2].OneofWrappers = []any{}
+	file_command_v1_command_proto_msgTypes[6].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_command_v1_command_proto_rawDesc), len(file_command_v1_command_proto_rawDesc)),
 			NumEnums:      3,
-			NumMessages:   5,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

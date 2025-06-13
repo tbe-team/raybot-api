@@ -25,25 +25,30 @@ var File_command_v1_service_proto protoreflect.FileDescriptor
 const file_command_v1_service_proto_rawDesc = "" +
 	"\n" +
 	"\x18command/v1/service.proto\x12\n" +
-	"command.v1\x1a\x18command/v1/command.proto2\xb7\x01\n" +
+	"command.v1\x1a\x18command/v1/command.proto2\xc3\x02\n" +
 	"\x0eCommandService\x12V\n" +
 	"\rCreateCommand\x12 .command.v1.CreateCommandRequest\x1a!.command.v1.CreateCommandResponse\"\x00\x12M\n" +
 	"\n" +
-	"GetCommand\x12\x1d.command.v1.GetCommandRequest\x1a\x1e.command.v1.GetCommandResponse\"\x00B'Z%github.com/tbe-team/raybot/command/v1b\x06proto3"
+	"GetCommand\x12\x1d.command.v1.GetCommandRequest\x1a\x1e.command.v1.GetCommandResponse\"\x00\x12\x89\x01\n" +
+	"\x1eCancelCurrentProcessingCommand\x121.command.v1.CancelCurrentProcessingCommandRequest\x1a2.command.v1.CancelCurrentProcessingCommandResponse\"\x00B'Z%github.com/tbe-team/raybot/command/v1b\x06proto3"
 
 var file_command_v1_service_proto_goTypes = []any{
-	(*CreateCommandRequest)(nil),  // 0: command.v1.CreateCommandRequest
-	(*GetCommandRequest)(nil),     // 1: command.v1.GetCommandRequest
-	(*CreateCommandResponse)(nil), // 2: command.v1.CreateCommandResponse
-	(*GetCommandResponse)(nil),    // 3: command.v1.GetCommandResponse
+	(*CreateCommandRequest)(nil),                   // 0: command.v1.CreateCommandRequest
+	(*GetCommandRequest)(nil),                      // 1: command.v1.GetCommandRequest
+	(*CancelCurrentProcessingCommandRequest)(nil),  // 2: command.v1.CancelCurrentProcessingCommandRequest
+	(*CreateCommandResponse)(nil),                  // 3: command.v1.CreateCommandResponse
+	(*GetCommandResponse)(nil),                     // 4: command.v1.GetCommandResponse
+	(*CancelCurrentProcessingCommandResponse)(nil), // 5: command.v1.CancelCurrentProcessingCommandResponse
 }
 var file_command_v1_service_proto_depIdxs = []int32{
 	0, // 0: command.v1.CommandService.CreateCommand:input_type -> command.v1.CreateCommandRequest
 	1, // 1: command.v1.CommandService.GetCommand:input_type -> command.v1.GetCommandRequest
-	2, // 2: command.v1.CommandService.CreateCommand:output_type -> command.v1.CreateCommandResponse
-	3, // 3: command.v1.CommandService.GetCommand:output_type -> command.v1.GetCommandResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	2, // 2: command.v1.CommandService.CancelCurrentProcessingCommand:input_type -> command.v1.CancelCurrentProcessingCommandRequest
+	3, // 3: command.v1.CommandService.CreateCommand:output_type -> command.v1.CreateCommandResponse
+	4, // 4: command.v1.CommandService.GetCommand:output_type -> command.v1.GetCommandResponse
+	5, // 5: command.v1.CommandService.CancelCurrentProcessingCommand:output_type -> command.v1.CancelCurrentProcessingCommandResponse
+	3, // [3:6] is the sub-list for method output_type
+	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name

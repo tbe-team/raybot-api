@@ -12,4 +12,7 @@ service CommandService {
 
   // GetCommand gets a command by its ID.
   rpc GetCommand(GetCommandRequest) returns (GetCommandResponse) {}
+
+  // CancelCurrentProcessingCommand cancels the current processing command.
+  rpc CancelCurrentProcessingCommand(CancelCurrentProcessingCommandRequest) returns (CancelCurrentProcessingCommandResponse) {}
 }

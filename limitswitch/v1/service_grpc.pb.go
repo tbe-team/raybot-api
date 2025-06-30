@@ -19,8 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	LimitSwitchService_GetLimitSwitch1_FullMethodName    = "/limitswitch.v1.LimitSwitchService/GetLimitSwitch1"
-	LimitSwitchService_StreamLimitSwitch1_FullMethodName = "/limitswitch.v1.LimitSwitchService/StreamLimitSwitch1"
+	LimitSwitchService_GetLimitSwitch1_FullMethodName              = "/limitswitch.v1.LimitSwitchService/GetLimitSwitch1"
+	LimitSwitchService_StreamLimitSwitch1PressEvent_FullMethodName = "/limitswitch.v1.LimitSwitchService/StreamLimitSwitch1PressEvent"
 )
 
 // LimitSwitchServiceClient is the client API for LimitSwitchService service.
@@ -32,9 +32,9 @@ type LimitSwitchServiceClient interface {
 	// It is used to detect whether the cargo has been inserted or removed correctly —
 	// serving as a confirmation sensor during the delivery or pickup process.
 	GetLimitSwitch1(ctx context.Context, in *GetLimitSwitch1Request, opts ...grpc.CallOption) (*GetLimitSwitch1Response, error)
-	// StreamLimitSwitch1 streams real-time state changes of limit switch 1.
+	// StreamLimitSwitch1PressEvent streams real-time press events of limit switch 1.
 	// Helpful for monitoring cargo interactions during the delivery cycle.
-	StreamLimitSwitch1(ctx context.Context, in *StreamLimitSwitch1Request, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamLimitSwitch1Response], error)
+	StreamLimitSwitch1PressEvent(ctx context.Context, in *StreamLimitSwitch1PressEventRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamLimitSwitch1PressEventResponse], error)
 }
 
 type limitSwitchServiceClient struct {
@@ -55,13 +55,13 @@ func (c *limitSwitchServiceClient) GetLimitSwitch1(ctx context.Context, in *GetL
 	return out, nil
 }
 
-func (c *limitSwitchServiceClient) StreamLimitSwitch1(ctx context.Context, in *StreamLimitSwitch1Request, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamLimitSwitch1Response], error) {
+func (c *limitSwitchServiceClient) StreamLimitSwitch1PressEvent(ctx context.Context, in *StreamLimitSwitch1PressEventRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamLimitSwitch1PressEventResponse], error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	stream, err := c.cc.NewStream(ctx, &LimitSwitchService_ServiceDesc.Streams[0], LimitSwitchService_StreamLimitSwitch1_FullMethodName, cOpts...)
+	stream, err := c.cc.NewStream(ctx, &LimitSwitchService_ServiceDesc.Streams[0], LimitSwitchService_StreamLimitSwitch1PressEvent_FullMethodName, cOpts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &grpc.GenericClientStream[StreamLimitSwitch1Request, StreamLimitSwitch1Response]{ClientStream: stream}
+	x := &grpc.GenericClientStream[StreamLimitSwitch1PressEventRequest, StreamLimitSwitch1PressEventResponse]{ClientStream: stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -72,7 +72,7 @@ func (c *limitSwitchServiceClient) StreamLimitSwitch1(ctx context.Context, in *S
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type LimitSwitchService_StreamLimitSwitch1Client = grpc.ServerStreamingClient[StreamLimitSwitch1Response]
+type LimitSwitchService_StreamLimitSwitch1PressEventClient = grpc.ServerStreamingClient[StreamLimitSwitch1PressEventResponse]
 
 // LimitSwitchServiceServer is the server API for LimitSwitchService service.
 // All implementations must embed UnimplementedLimitSwitchServiceServer
@@ -83,9 +83,9 @@ type LimitSwitchServiceServer interface {
 	// It is used to detect whether the cargo has been inserted or removed correctly —
 	// serving as a confirmation sensor during the delivery or pickup process.
 	GetLimitSwitch1(context.Context, *GetLimitSwitch1Request) (*GetLimitSwitch1Response, error)
-	// StreamLimitSwitch1 streams real-time state changes of limit switch 1.
+	// StreamLimitSwitch1PressEvent streams real-time press events of limit switch 1.
 	// Helpful for monitoring cargo interactions during the delivery cycle.
-	StreamLimitSwitch1(*StreamLimitSwitch1Request, grpc.ServerStreamingServer[StreamLimitSwitch1Response]) error
+	StreamLimitSwitch1PressEvent(*StreamLimitSwitch1PressEventRequest, grpc.ServerStreamingServer[StreamLimitSwitch1PressEventResponse]) error
 	mustEmbedUnimplementedLimitSwitchServiceServer()
 }
 
@@ -99,8 +99,8 @@ type UnimplementedLimitSwitchServiceServer struct{}
 func (UnimplementedLimitSwitchServiceServer) GetLimitSwitch1(context.Context, *GetLimitSwitch1Request) (*GetLimitSwitch1Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetLimitSwitch1 not implemented")
 }
-func (UnimplementedLimitSwitchServiceServer) StreamLimitSwitch1(*StreamLimitSwitch1Request, grpc.ServerStreamingServer[StreamLimitSwitch1Response]) error {
-	return status.Errorf(codes.Unimplemented, "method StreamLimitSwitch1 not implemented")
+func (UnimplementedLimitSwitchServiceServer) StreamLimitSwitch1PressEvent(*StreamLimitSwitch1PressEventRequest, grpc.ServerStreamingServer[StreamLimitSwitch1PressEventResponse]) error {
+	return status.Errorf(codes.Unimplemented, "method StreamLimitSwitch1PressEvent not implemented")
 }
 func (UnimplementedLimitSwitchServiceServer) mustEmbedUnimplementedLimitSwitchServiceServer() {}
 func (UnimplementedLimitSwitchServiceServer) testEmbeddedByValue()                            {}
@@ -141,16 +141,16 @@ func _LimitSwitchService_GetLimitSwitch1_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LimitSwitchService_StreamLimitSwitch1_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(StreamLimitSwitch1Request)
+func _LimitSwitchService_StreamLimitSwitch1PressEvent_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(StreamLimitSwitch1PressEventRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(LimitSwitchServiceServer).StreamLimitSwitch1(m, &grpc.GenericServerStream[StreamLimitSwitch1Request, StreamLimitSwitch1Response]{ServerStream: stream})
+	return srv.(LimitSwitchServiceServer).StreamLimitSwitch1PressEvent(m, &grpc.GenericServerStream[StreamLimitSwitch1PressEventRequest, StreamLimitSwitch1PressEventResponse]{ServerStream: stream})
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type LimitSwitchService_StreamLimitSwitch1Server = grpc.ServerStreamingServer[StreamLimitSwitch1Response]
+type LimitSwitchService_StreamLimitSwitch1PressEventServer = grpc.ServerStreamingServer[StreamLimitSwitch1PressEventResponse]
 
 // LimitSwitchService_ServiceDesc is the grpc.ServiceDesc for LimitSwitchService service.
 // It's only intended for direct use with grpc.RegisterService,
@@ -166,8 +166,8 @@ var LimitSwitchService_ServiceDesc = grpc.ServiceDesc{
 	},
 	Streams: []grpc.StreamDesc{
 		{
-			StreamName:    "StreamLimitSwitch1",
-			Handler:       _LimitSwitchService_StreamLimitSwitch1_Handler,
+			StreamName:    "StreamLimitSwitch1PressEvent",
+			Handler:       _LimitSwitchService_StreamLimitSwitch1PressEvent_Handler,
 			ServerStreams: true,
 		},
 	},

@@ -13,7 +13,7 @@ service LimitSwitchService {
   // serving as a confirmation sensor during the delivery or pickup process.
   rpc GetLimitSwitch1(GetLimitSwitch1Request) returns (GetLimitSwitch1Response) {}
 
-  // StreamLimitSwitch1 streams real-time state changes of limit switch 1.
+  // StreamLimitSwitch1PressEvent streams real-time press events of limit switch 1.
   // Helpful for monitoring cargo interactions during the delivery cycle.
-  rpc StreamLimitSwitch1(StreamLimitSwitch1Request) returns (stream StreamLimitSwitch1Response) {}
+  rpc StreamLimitSwitch1PressEvent(StreamLimitSwitch1PressEventRequest) returns (stream StreamLimitSwitch1PressEventResponse) {}
 }

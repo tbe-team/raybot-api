@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package limitswitch.v1;
+
+import "limitswitch/v1/limit_switch.proto";
+
+option go_package = "github.com/tbe-team/raybot/limitswitch/v1";
+
+service LimitSwitchService {
+  // GetLimitSwitch1 returns the current status of limit switch 1.
+  // This limit switch is physically mounted on the cargo box.
+  // It is used to detect whether the cargo has been inserted or removed correctly —
+  // serving as a confirmation sensor during the delivery or pickup process.
+  rpc GetLimitSwitch1(GetLimitSwitch1Request) returns (GetLimitSwitch1Response) {}
+
+  // StreamLimitSwitch1 streams real-time state changes of limit switch 1.
+  // Helpful for monitoring cargo interactions during the delivery cycle.
+  rpc StreamLimitSwitch1(StreamLimitSwitch1Request) returns (stream StreamLimitSwitch1Response) {}
+}

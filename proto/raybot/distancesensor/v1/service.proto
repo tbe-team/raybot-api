@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package distancesensor.v1;
+
+import "distancesensor/v1/distance_sensor.proto";
+
+option go_package = "github.com/tbe-team/raybot/distancesensor/v1";
+
+service DistanceSensorService {
+  // GetDistanceSensor returns the current distance sensor information.
+  rpc GetDistanceSensor(GetDistanceSensorRequest) returns (GetDistanceSensorResponse) {}
+}

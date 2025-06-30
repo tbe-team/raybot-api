@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package limitswitch.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/tbe-team/raybot/limitswitch/v1";
+
+message GetLimitSwitch1Request {}
+
+message GetLimitSwitch1Response {
+  bool is_pressed = 1;
+  google.protobuf.Timestamp updated_at = 2;
+}
+
+message StreamLimitSwitch1Request {}
+
+message StreamLimitSwitch1Response {
+  bool is_pressed = 1;
+  google.protobuf.Timestamp updated_at = 2;
+}

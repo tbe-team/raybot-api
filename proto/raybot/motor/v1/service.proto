@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package motor.v1;
+
+import "motor/v1/motor.proto";
+
+option go_package = "github.com/tbe-team/raybot/motor/v1";
+
+service MotorService {
+  // GetDriveMotor returns the current drive motor information.
+  rpc GetDriveMotor(GetDriveMotorRequest) returns (GetDriveMotorResponse) {}
+
+  // GetLiftMotor returns the current lift motor information.
+  rpc GetLiftMotor(GetLiftMotorRequest) returns (GetLiftMotorResponse) {}
+
+  // GetCargoDoorMotor returns the current cargo door motor information.
+  rpc GetCargoDoorMotor(GetCargoDoorMotorRequest) returns (GetCargoDoorMotorResponse) {}
+}

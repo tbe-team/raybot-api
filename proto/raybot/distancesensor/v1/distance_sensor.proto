@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package distancesensor.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/tbe-team/raybot/distancesensor/v1";
+
+message GetDistanceSensorRequest {}
+
+message GetDistanceSensorResponse {
+  uint32 front_distance = 1;
+  uint32 back_distance = 2;
+  uint32 down_distance = 3;
+  google.protobuf.Timestamp updated_at = 4;
+}

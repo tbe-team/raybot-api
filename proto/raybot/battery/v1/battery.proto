@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package battery.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/tbe-team/raybot/battery/v1";
+
+message GetBatteryRequest {}
+
+message GetBatteryResponse {
+  uint32 current = 1;
+  uint32 temp = 2;
+  uint32 voltage = 3;
+  repeated uint32 cells = 4;
+  uint32 percent = 5;
+  uint32 fault = 6;
+  uint32 health = 7;
+  google.protobuf.Timestamp updated_at = 8;
+}
+
+message GetChargeSettingRequest {}
+
+message GetChargeSettingResponse {
+  uint32 current_limit = 1;
+  bool enabled = 2;
+  google.protobuf.Timestamp updated_at = 3;
+}
+
+message GetDischargeSettingRequest {}
+
+message GetDischargeSettingResponse {
+  uint32 current_limit = 1;
+  bool enabled = 2;
+  google.protobuf.Timestamp updated_at = 3;
+}

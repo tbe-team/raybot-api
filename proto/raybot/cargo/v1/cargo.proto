@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package cargo.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/tbe-team/raybot/cargo/v1";
+
+message GetCargoRequest {}
+
+message GetCargoResponse {
+  bool is_open = 1;
+  string qr_code = 2;
+  uint32 bottom_distance = 3;
+  bool has_item = 4;
+  google.protobuf.Timestamp updated_at = 5;
+}

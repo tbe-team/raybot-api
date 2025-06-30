@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package motor.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/tbe-team/raybot/motor/v1";
+
+message GetDriveMotorRequest {}
+
+message GetDriveMotorResponse {
+  enum Direction {
+    DIRECTION_UNSPECIFIED = 0;
+    DIRECTION_FORWARD = 1;
+    DIRECTION_BACKWARD = 2;
+  }
+
+  Direction direction = 1;
+  uint32 speed = 2;
+  bool is_running = 3;
+  bool enabled = 4;
+  google.protobuf.Timestamp updated_at = 5;
+}
+
+message GetLiftMotorRequest {}
+
+message GetLiftMotorResponse {
+  uint32 current_position = 1;
+  uint32 target_position = 2;
+  bool is_running = 3;
+  bool enabled = 4;
+  google.protobuf.Timestamp updated_at = 5;
+}
+
+message GetCargoDoorMotorRequest {}
+
+message GetCargoDoorMotorResponse {
+  enum Direction {
+    DIRECTION_UNSPECIFIED = 0;
+    DIRECTION_OPEN = 1;
+    DIRECTION_CLOSE = 2;
+  }
+
+  Direction direction = 1;
+  uint32 speed = 2;
+  bool is_running = 3;
+  bool enabled = 4;
+  google.protobuf.Timestamp updated_at = 5;
+}

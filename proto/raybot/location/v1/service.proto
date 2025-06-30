@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package location.v1;
+
+import "location/v1/location.proto";
+
+option go_package = "github.com/tbe-team/raybot/location/v1";
+
+service LocationService {
+  // GetLocation returns the current location information.
+  rpc GetLocation(GetLocationRequest) returns (GetLocationResponse) {}
+
+  // StreamLocation streams real-time location updates of the robot for tracking and visualization.
+  rpc StreamLocation(StreamLocationRequest) returns (stream StreamLocationResponse) {}
+}

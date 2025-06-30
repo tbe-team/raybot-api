@@ -63,7 +63,7 @@ type GetBatteryResponse struct {
 	Current       uint32                 `protobuf:"varint,1,opt,name=current,proto3" json:"current,omitempty"`
 	Temp          uint32                 `protobuf:"varint,2,opt,name=temp,proto3" json:"temp,omitempty"`
 	Voltage       uint32                 `protobuf:"varint,3,opt,name=voltage,proto3" json:"voltage,omitempty"`
-	Cells         []uint32               `protobuf:"varint,4,rep,packed,name=cells,proto3" json:"cells,omitempty"`
+	CellVoltages  []uint32               `protobuf:"varint,4,rep,packed,name=cell_voltages,json=cellVoltages,proto3" json:"cell_voltages,omitempty"`
 	Percent       uint32                 `protobuf:"varint,5,opt,name=percent,proto3" json:"percent,omitempty"`
 	Fault         uint32                 `protobuf:"varint,6,opt,name=fault,proto3" json:"fault,omitempty"`
 	Health        uint32                 `protobuf:"varint,7,opt,name=health,proto3" json:"health,omitempty"`
@@ -123,9 +123,9 @@ func (x *GetBatteryResponse) GetVoltage() uint32 {
 	return 0
 }
 
-func (x *GetBatteryResponse) GetCells() []uint32 {
+func (x *GetBatteryResponse) GetCellVoltages() []uint32 {
 	if x != nil {
-		return x.Cells
+		return x.CellVoltages
 	}
 	return nil
 }
@@ -356,12 +356,12 @@ const file_battery_v1_battery_proto_rawDesc = "" +
 	"\n" +
 	"\x18battery/v1/battery.proto\x12\n" +
 	"battery.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x13\n" +
-	"\x11GetBatteryRequest\"\xf5\x01\n" +
+	"\x11GetBatteryRequest\"\x84\x02\n" +
 	"\x12GetBatteryResponse\x12\x18\n" +
 	"\acurrent\x18\x01 \x01(\rR\acurrent\x12\x12\n" +
 	"\x04temp\x18\x02 \x01(\rR\x04temp\x12\x18\n" +
-	"\avoltage\x18\x03 \x01(\rR\avoltage\x12\x14\n" +
-	"\x05cells\x18\x04 \x03(\rR\x05cells\x12\x18\n" +
+	"\avoltage\x18\x03 \x01(\rR\avoltage\x12#\n" +
+	"\rcell_voltages\x18\x04 \x03(\rR\fcellVoltages\x12\x18\n" +
 	"\apercent\x18\x05 \x01(\rR\apercent\x12\x14\n" +
 	"\x05fault\x18\x06 \x01(\rR\x05fault\x12\x16\n" +
 	"\x06health\x18\a \x01(\rR\x06health\x129\n" +

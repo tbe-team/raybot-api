@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package location.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/tbe-team/raybot/location/v1";
+
+message GetLocationRequest {}
+
+message GetLocationResponse {
+  string current_location = 1;
+  google.protobuf.Timestamp updated_at = 2;
+}
+
+message StreamLocationRequest {}
+
+message StreamLocationResponse {
+  string current_location = 1;
+  google.protobuf.Timestamp updated_at = 2;
+}

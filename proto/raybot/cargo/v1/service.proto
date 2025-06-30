@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package cargo.v1;
+
+import "cargo/v1/cargo.proto";
+
+option go_package = "github.com/tbe-team/raybot/cargo/v1";
+
+service CargoService {
+  // GetCargo returns the current cargo information.
+  rpc GetCargo(GetCargoRequest) returns (GetCargoResponse) {}
+}

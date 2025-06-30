@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package battery.v1;
+
+import "battery/v1/battery.proto";
+
+option go_package = "github.com/tbe-team/raybot/battery/v1";
+
+service BatteryService {
+  // GetBattery returns the current battery information.
+  rpc GetBattery(GetBatteryRequest) returns (GetBatteryResponse) {}
+
+  // GetChargeSetting returns the current charge setting.
+  rpc GetChargeSetting(GetChargeSettingRequest) returns (GetChargeSettingResponse) {}
+
+  // GetDischargeSetting returns the current discharge setting.
+  rpc GetDischargeSetting(GetDischargeSettingRequest) returns (GetDischargeSettingResponse) {}
+}

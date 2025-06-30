@@ -110,26 +110,26 @@ func (x *GetLimitSwitch1Response) GetUpdatedAt() *timestamppb.Timestamp {
 	return nil
 }
 
-type StreamLimitSwitch1Request struct {
+type StreamLimitSwitch1PressEventRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *StreamLimitSwitch1Request) Reset() {
-	*x = StreamLimitSwitch1Request{}
+func (x *StreamLimitSwitch1PressEventRequest) Reset() {
+	*x = StreamLimitSwitch1PressEventRequest{}
 	mi := &file_limitswitch_v1_limit_switch_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *StreamLimitSwitch1Request) String() string {
+func (x *StreamLimitSwitch1PressEventRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*StreamLimitSwitch1Request) ProtoMessage() {}
+func (*StreamLimitSwitch1PressEventRequest) ProtoMessage() {}
 
-func (x *StreamLimitSwitch1Request) ProtoReflect() protoreflect.Message {
+func (x *StreamLimitSwitch1PressEventRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_limitswitch_v1_limit_switch_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -141,33 +141,32 @@ func (x *StreamLimitSwitch1Request) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use StreamLimitSwitch1Request.ProtoReflect.Descriptor instead.
-func (*StreamLimitSwitch1Request) Descriptor() ([]byte, []int) {
+// Deprecated: Use StreamLimitSwitch1PressEventRequest.ProtoReflect.Descriptor instead.
+func (*StreamLimitSwitch1PressEventRequest) Descriptor() ([]byte, []int) {
 	return file_limitswitch_v1_limit_switch_proto_rawDescGZIP(), []int{2}
 }
 
-type StreamLimitSwitch1Response struct {
+type StreamLimitSwitch1PressEventResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	IsPressed     bool                   `protobuf:"varint,1,opt,name=is_pressed,json=isPressed,proto3" json:"is_pressed,omitempty"`
-	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	PressedAt     *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=pressed_at,json=pressedAt,proto3" json:"pressed_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *StreamLimitSwitch1Response) Reset() {
-	*x = StreamLimitSwitch1Response{}
+func (x *StreamLimitSwitch1PressEventResponse) Reset() {
+	*x = StreamLimitSwitch1PressEventResponse{}
 	mi := &file_limitswitch_v1_limit_switch_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *StreamLimitSwitch1Response) String() string {
+func (x *StreamLimitSwitch1PressEventResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*StreamLimitSwitch1Response) ProtoMessage() {}
+func (*StreamLimitSwitch1PressEventResponse) ProtoMessage() {}
 
-func (x *StreamLimitSwitch1Response) ProtoReflect() protoreflect.Message {
+func (x *StreamLimitSwitch1PressEventResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_limitswitch_v1_limit_switch_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -179,21 +178,14 @@ func (x *StreamLimitSwitch1Response) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use StreamLimitSwitch1Response.ProtoReflect.Descriptor instead.
-func (*StreamLimitSwitch1Response) Descriptor() ([]byte, []int) {
+// Deprecated: Use StreamLimitSwitch1PressEventResponse.ProtoReflect.Descriptor instead.
+func (*StreamLimitSwitch1PressEventResponse) Descriptor() ([]byte, []int) {
 	return file_limitswitch_v1_limit_switch_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *StreamLimitSwitch1Response) GetIsPressed() bool {
+func (x *StreamLimitSwitch1PressEventResponse) GetPressedAt() *timestamppb.Timestamp {
 	if x != nil {
-		return x.IsPressed
-	}
-	return false
-}
-
-func (x *StreamLimitSwitch1Response) GetUpdatedAt() *timestamppb.Timestamp {
-	if x != nil {
-		return x.UpdatedAt
+		return x.PressedAt
 	}
 	return nil
 }
@@ -208,13 +200,11 @@ const file_limitswitch_v1_limit_switch_proto_rawDesc = "" +
 	"\n" +
 	"is_pressed\x18\x01 \x01(\bR\tisPressed\x129\n" +
 	"\n" +
-	"updated_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\x1b\n" +
-	"\x19StreamLimitSwitch1Request\"v\n" +
-	"\x1aStreamLimitSwitch1Response\x12\x1d\n" +
+	"updated_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"%\n" +
+	"#StreamLimitSwitch1PressEventRequest\"a\n" +
+	"$StreamLimitSwitch1PressEventResponse\x129\n" +
 	"\n" +
-	"is_pressed\x18\x01 \x01(\bR\tisPressed\x129\n" +
-	"\n" +
-	"updated_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAtB+Z)github.com/tbe-team/raybot/limitswitch/v1b\x06proto3"
+	"pressed_at\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\tpressedAtB+Z)github.com/tbe-team/raybot/limitswitch/v1b\x06proto3"
 
 var (
 	file_limitswitch_v1_limit_switch_proto_rawDescOnce sync.Once
@@ -230,15 +220,15 @@ func file_limitswitch_v1_limit_switch_proto_rawDescGZIP() []byte {
 
 var file_limitswitch_v1_limit_switch_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_limitswitch_v1_limit_switch_proto_goTypes = []any{
-	(*GetLimitSwitch1Request)(nil),     // 0: limitswitch.v1.GetLimitSwitch1Request
-	(*GetLimitSwitch1Response)(nil),    // 1: limitswitch.v1.GetLimitSwitch1Response
-	(*StreamLimitSwitch1Request)(nil),  // 2: limitswitch.v1.StreamLimitSwitch1Request
-	(*StreamLimitSwitch1Response)(nil), // 3: limitswitch.v1.StreamLimitSwitch1Response
-	(*timestamppb.Timestamp)(nil),      // 4: google.protobuf.Timestamp
+	(*GetLimitSwitch1Request)(nil),               // 0: limitswitch.v1.GetLimitSwitch1Request
+	(*GetLimitSwitch1Response)(nil),              // 1: limitswitch.v1.GetLimitSwitch1Response
+	(*StreamLimitSwitch1PressEventRequest)(nil),  // 2: limitswitch.v1.StreamLimitSwitch1PressEventRequest
+	(*StreamLimitSwitch1PressEventResponse)(nil), // 3: limitswitch.v1.StreamLimitSwitch1PressEventResponse
+	(*timestamppb.Timestamp)(nil),                // 4: google.protobuf.Timestamp
 }
 var file_limitswitch_v1_limit_switch_proto_depIdxs = []int32{
 	4, // 0: limitswitch.v1.GetLimitSwitch1Response.updated_at:type_name -> google.protobuf.Timestamp
-	4, // 1: limitswitch.v1.StreamLimitSwitch1Response.updated_at:type_name -> google.protobuf.Timestamp
+	4, // 1: limitswitch.v1.StreamLimitSwitch1PressEventResponse.pressed_at:type_name -> google.protobuf.Timestamp
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

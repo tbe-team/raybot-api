@@ -24,22 +24,22 @@ var File_limitswitch_v1_service_proto protoreflect.FileDescriptor
 
 const file_limitswitch_v1_service_proto_rawDesc = "" +
 	"\n" +
-	"\x1climitswitch/v1/service.proto\x12\x0elimitswitch.v1\x1a!limitswitch/v1/limit_switch.proto2\xeb\x01\n" +
+	"\x1climitswitch/v1/service.proto\x12\x0elimitswitch.v1\x1a!limitswitch/v1/limit_switch.proto2\x8a\x02\n" +
 	"\x12LimitSwitchService\x12d\n" +
-	"\x0fGetLimitSwitch1\x12&.limitswitch.v1.GetLimitSwitch1Request\x1a'.limitswitch.v1.GetLimitSwitch1Response\"\x00\x12o\n" +
-	"\x12StreamLimitSwitch1\x12).limitswitch.v1.StreamLimitSwitch1Request\x1a*.limitswitch.v1.StreamLimitSwitch1Response\"\x000\x01B+Z)github.com/tbe-team/raybot/limitswitch/v1b\x06proto3"
+	"\x0fGetLimitSwitch1\x12&.limitswitch.v1.GetLimitSwitch1Request\x1a'.limitswitch.v1.GetLimitSwitch1Response\"\x00\x12\x8d\x01\n" +
+	"\x1cStreamLimitSwitch1PressEvent\x123.limitswitch.v1.StreamLimitSwitch1PressEventRequest\x1a4.limitswitch.v1.StreamLimitSwitch1PressEventResponse\"\x000\x01B+Z)github.com/tbe-team/raybot/limitswitch/v1b\x06proto3"
 
 var file_limitswitch_v1_service_proto_goTypes = []any{
-	(*GetLimitSwitch1Request)(nil),     // 0: limitswitch.v1.GetLimitSwitch1Request
-	(*StreamLimitSwitch1Request)(nil),  // 1: limitswitch.v1.StreamLimitSwitch1Request
-	(*GetLimitSwitch1Response)(nil),    // 2: limitswitch.v1.GetLimitSwitch1Response
-	(*StreamLimitSwitch1Response)(nil), // 3: limitswitch.v1.StreamLimitSwitch1Response
+	(*GetLimitSwitch1Request)(nil),               // 0: limitswitch.v1.GetLimitSwitch1Request
+	(*StreamLimitSwitch1PressEventRequest)(nil),  // 1: limitswitch.v1.StreamLimitSwitch1PressEventRequest
+	(*GetLimitSwitch1Response)(nil),              // 2: limitswitch.v1.GetLimitSwitch1Response
+	(*StreamLimitSwitch1PressEventResponse)(nil), // 3: limitswitch.v1.StreamLimitSwitch1PressEventResponse
 }
 var file_limitswitch_v1_service_proto_depIdxs = []int32{
 	0, // 0: limitswitch.v1.LimitSwitchService.GetLimitSwitch1:input_type -> limitswitch.v1.GetLimitSwitch1Request
-	1, // 1: limitswitch.v1.LimitSwitchService.StreamLimitSwitch1:input_type -> limitswitch.v1.StreamLimitSwitch1Request
+	1, // 1: limitswitch.v1.LimitSwitchService.StreamLimitSwitch1PressEvent:input_type -> limitswitch.v1.StreamLimitSwitch1PressEventRequest
 	2, // 2: limitswitch.v1.LimitSwitchService.GetLimitSwitch1:output_type -> limitswitch.v1.GetLimitSwitch1Response
-	3, // 3: limitswitch.v1.LimitSwitchService.StreamLimitSwitch1:output_type -> limitswitch.v1.StreamLimitSwitch1Response
+	3, // 3: limitswitch.v1.LimitSwitchService.StreamLimitSwitch1PressEvent:output_type -> limitswitch.v1.StreamLimitSwitch1PressEventResponse
 	2, // [2:4] is the sub-list for method output_type
 	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

@@ -13,9 +13,8 @@ message GetLimitSwitch1Response {
   google.protobuf.Timestamp updated_at = 2;
 }
 
-message StreamLimitSwitch1Request {}
+message StreamLimitSwitch1PressEventRequest {}
 
-message StreamLimitSwitch1Response {
-  bool is_pressed = 1;
-  google.protobuf.Timestamp updated_at = 2;
+message StreamLimitSwitch1PressEventResponse {
+  google.protobuf.Timestamp pressed_at = 1;
 }

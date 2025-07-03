@@ -4,7 +4,7 @@ package location.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/tbe-team/raybot/location/v1";
+option go_package = "github.com/tbe-team/raybot-api/location/v1";
 
 message GetLocationRequest {}
 

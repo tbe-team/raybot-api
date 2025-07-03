@@ -146,7 +146,7 @@ const file_cargo_v1_cargo_proto_rawDesc = "" +
 	"\x0fbottom_distance\x18\x03 \x01(\rR\x0ebottomDistance\x12\x19\n" +
 	"\bhas_item\x18\x04 \x01(\bR\ahasItem\x129\n" +
 	"\n" +
-	"updated_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAtB%Z#github.com/tbe-team/raybot/cargo/v1b\x06proto3"
+	"updated_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAtB)Z'github.com/tbe-team/raybot-api/cargo/v1b\x06proto3"
 
 var (
 	file_cargo_v1_cargo_proto_rawDescOnce sync.Once

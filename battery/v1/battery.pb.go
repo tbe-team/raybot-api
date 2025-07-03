@@ -378,7 +378,7 @@ const file_battery_v1_battery_proto_rawDesc = "" +
 	"\rcurrent_limit\x18\x01 \x01(\rR\fcurrentLimit\x12\x18\n" +
 	"\aenabled\x18\x02 \x01(\bR\aenabled\x129\n" +
 	"\n" +
-	"updated_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAtB'Z%github.com/tbe-team/raybot/battery/v1b\x06proto3"
+	"updated_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAtB+Z)github.com/tbe-team/raybot-api/battery/v1b\x06proto3"
 
 var (
 	file_battery_v1_battery_proto_rawDescOnce sync.Once

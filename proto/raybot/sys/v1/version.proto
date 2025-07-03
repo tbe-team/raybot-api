@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package sys.v1;
 
-option go_package = "github.com/tbe-team/raybot/sys/v1";
+option go_package = "github.com/tbe-team/raybot-api/sys/v1";
 
 message GetVersionRequest {}
 

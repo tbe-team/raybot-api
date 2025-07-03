@@ -4,7 +4,7 @@ package motor.v1;
 
 import "motor/v1/motor.proto";
 
-option go_package = "github.com/tbe-team/raybot/motor/v1";
+option go_package = "github.com/tbe-team/raybot-api/motor/v1";
 
 service MotorService {
   // GetDriveMotor returns the current drive motor information.

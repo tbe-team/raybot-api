@@ -30,7 +30,7 @@ const file_command_v1_service_proto_rawDesc = "" +
 	"\rCreateCommand\x12 .command.v1.CreateCommandRequest\x1a!.command.v1.CreateCommandResponse\"\x00\x12M\n" +
 	"\n" +
 	"GetCommand\x12\x1d.command.v1.GetCommandRequest\x1a\x1e.command.v1.GetCommandResponse\"\x00\x12\x89\x01\n" +
-	"\x1eCancelCurrentProcessingCommand\x121.command.v1.CancelCurrentProcessingCommandRequest\x1a2.command.v1.CancelCurrentProcessingCommandResponse\"\x00B'Z%github.com/tbe-team/raybot/command/v1b\x06proto3"
+	"\x1eCancelCurrentProcessingCommand\x121.command.v1.CancelCurrentProcessingCommandRequest\x1a2.command.v1.CancelCurrentProcessingCommandResponse\"\x00B+Z)github.com/tbe-team/raybot-api/command/v1b\x06proto3"
 
 var file_command_v1_service_proto_goTypes = []any{
 	(*CreateCommandRequest)(nil),                   // 0: command.v1.CreateCommandRequest

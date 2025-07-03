@@ -743,7 +743,7 @@ const file_command_v1_outputs_proto_rawDesc = "" +
 	"scanned_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\tscannedAt\"I\n" +
 	"\x13ScanLocationOutputs\x122\n" +
 	"\tlocations\x18\x01 \x03(\v2\x14.command.v1.LocationR\tlocations\"\r\n" +
-	"\vWaitOutputsB'Z%github.com/tbe-team/raybot/command/v1b\x06proto3"
+	"\vWaitOutputsB+Z)github.com/tbe-team/raybot-api/command/v1b\x06proto3"
 
 var (
 	file_command_v1_outputs_proto_rawDescOnce sync.Once

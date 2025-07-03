@@ -5,7 +5,7 @@ package sys.v1;
 import "sys/v1/sys_info.proto";
 import "sys/v1/version.proto";
 
-option go_package = "github.com/tbe-team/raybot/sys/v1";
+option go_package = "github.com/tbe-team/raybot-api/sys/v1";
 
 service SysService {
   // GetSysInfo returns the system information.

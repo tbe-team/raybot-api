@@ -28,7 +28,7 @@ const file_motor_v1_service_proto_rawDesc = "" +
 	"\fMotorService\x12R\n" +
 	"\rGetDriveMotor\x12\x1e.motor.v1.GetDriveMotorRequest\x1a\x1f.motor.v1.GetDriveMotorResponse\"\x00\x12O\n" +
 	"\fGetLiftMotor\x12\x1d.motor.v1.GetLiftMotorRequest\x1a\x1e.motor.v1.GetLiftMotorResponse\"\x00\x12^\n" +
-	"\x11GetCargoDoorMotor\x12\".motor.v1.GetCargoDoorMotorRequest\x1a#.motor.v1.GetCargoDoorMotorResponse\"\x00B%Z#github.com/tbe-team/raybot/motor/v1b\x06proto3"
+	"\x11GetCargoDoorMotor\x12\".motor.v1.GetCargoDoorMotorRequest\x1a#.motor.v1.GetCargoDoorMotorResponse\"\x00B)Z'github.com/tbe-team/raybot-api/motor/v1b\x06proto3"
 
 var file_motor_v1_service_proto_goTypes = []any{
 	(*GetDriveMotorRequest)(nil),      // 0: motor.v1.GetDriveMotorRequest

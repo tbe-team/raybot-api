@@ -4,7 +4,7 @@ package battery.v1;
 
 import "battery/v1/battery.proto";
 
-option go_package = "github.com/tbe-team/raybot/battery/v1";
+option go_package = "github.com/tbe-team/raybot-api/battery/v1";
 
 service BatteryService {
   // GetBattery returns the current battery information.

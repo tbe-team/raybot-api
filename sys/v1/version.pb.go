@@ -127,7 +127,7 @@ const file_sys_v1_version_proto_rawDesc = "" +
 	"\aversion\x18\x01 \x01(\tR\aversion\x12\x12\n" +
 	"\x04date\x18\x02 \x01(\tR\x04date\x12\x1d\n" +
 	"\n" +
-	"go_version\x18\x03 \x01(\tR\tgoVersionB#Z!github.com/tbe-team/raybot/sys/v1b\x06proto3"
+	"go_version\x18\x03 \x01(\tR\tgoVersionB'Z%github.com/tbe-team/raybot-api/sys/v1b\x06proto3"
 
 var (
 	file_sys_v1_version_proto_rawDescOnce sync.Once

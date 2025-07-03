@@ -256,7 +256,7 @@ const file_sys_v1_service_proto_rawDesc = "" +
 	"GetVersion\x12\x19.sys.v1.GetVersionRequest\x1a\x1a.sys.v1.GetVersionResponse\"\x00\x123\n" +
 	"\x04Ping\x12\x13.sys.v1.PingRequest\x1a\x14.sys.v1.PingResponse\"\x00\x129\n" +
 	"\x06Reboot\x12\x15.sys.v1.RebootRequest\x1a\x16.sys.v1.RebootResponse\"\x00\x12N\n" +
-	"\rStopEmergency\x12\x1c.sys.v1.StopEmergencyRequest\x1a\x1d.sys.v1.StopEmergencyResponse\"\x00B#Z!github.com/tbe-team/raybot/sys/v1b\x06proto3"
+	"\rStopEmergency\x12\x1c.sys.v1.StopEmergencyRequest\x1a\x1d.sys.v1.StopEmergencyResponse\"\x00B'Z%github.com/tbe-team/raybot-api/sys/v1b\x06proto3"
 
 var (
 	file_sys_v1_service_proto_rawDescOnce sync.Once

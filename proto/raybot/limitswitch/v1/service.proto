@@ -4,7 +4,7 @@ package limitswitch.v1;
 
 import "limitswitch/v1/limit_switch.proto";
 
-option go_package = "github.com/tbe-team/raybot/limitswitch/v1";
+option go_package = "github.com/tbe-team/raybot-api/limitswitch/v1";
 
 service LimitSwitchService {
   // GetLimitSwitch1 returns the current status of limit switch 1.

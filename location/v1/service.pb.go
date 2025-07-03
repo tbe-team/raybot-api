@@ -27,7 +27,7 @@ const file_location_v1_service_proto_rawDesc = "" +
 	"\x19location/v1/service.proto\x12\vlocation.v1\x1a\x1alocation/v1/location.proto2\xc4\x01\n" +
 	"\x0fLocationService\x12R\n" +
 	"\vGetLocation\x12\x1f.location.v1.GetLocationRequest\x1a .location.v1.GetLocationResponse\"\x00\x12]\n" +
-	"\x0eStreamLocation\x12\".location.v1.StreamLocationRequest\x1a#.location.v1.StreamLocationResponse\"\x000\x01B(Z&github.com/tbe-team/raybot/location/v1b\x06proto3"
+	"\x0eStreamLocation\x12\".location.v1.StreamLocationRequest\x1a#.location.v1.StreamLocationResponse\"\x000\x01B,Z*github.com/tbe-team/raybot-api/location/v1b\x06proto3"
 
 var file_location_v1_service_proto_goTypes = []any{
 	(*GetLocationRequest)(nil),     // 0: location.v1.GetLocationRequest

@@ -212,7 +212,7 @@ const file_location_v1_location_proto_rawDesc = "" +
 	"\x16StreamLocationResponse\x12)\n" +
 	"\x10current_location\x18\x01 \x01(\tR\x0fcurrentLocation\x129\n" +
 	"\n" +
-	"updated_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAtB(Z&github.com/tbe-team/raybot/location/v1b\x06proto3"
+	"updated_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAtB,Z*github.com/tbe-team/raybot-api/location/v1b\x06proto3"
 
 var (
 	file_location_v1_location_proto_rawDescOnce sync.Once

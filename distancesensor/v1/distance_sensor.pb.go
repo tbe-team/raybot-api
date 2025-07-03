@@ -137,7 +137,7 @@ const file_distancesensor_v1_distance_sensor_proto_rawDesc = "" +
 	"\rback_distance\x18\x02 \x01(\rR\fbackDistance\x12#\n" +
 	"\rdown_distance\x18\x03 \x01(\rR\fdownDistance\x129\n" +
 	"\n" +
-	"updated_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAtB.Z,github.com/tbe-team/raybot/distancesensor/v1b\x06proto3"
+	"updated_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAtB2Z0github.com/tbe-team/raybot-api/distancesensor/v1b\x06proto3"
 
 var (
 	file_distancesensor_v1_distance_sensor_proto_rawDescOnce sync.Once

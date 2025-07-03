@@ -145,7 +145,7 @@ const file_sys_v1_sys_info_proto_rawDesc = "" +
 	"\tcpu_usage\x18\x02 \x01(\x02R\bcpuUsage\x12!\n" +
 	"\fmemory_usage\x18\x03 \x01(\x02R\vmemoryUsage\x12!\n" +
 	"\ftotal_memory\x18\x04 \x01(\x04R\vtotalMemory\x121\n" +
-	"\x06uptime\x18\x05 \x01(\v2\x19.google.protobuf.DurationR\x06uptimeB#Z!github.com/tbe-team/raybot/sys/v1b\x06proto3"
+	"\x06uptime\x18\x05 \x01(\v2\x19.google.protobuf.DurationR\x06uptimeB'Z%github.com/tbe-team/raybot-api/sys/v1b\x06proto3"
 
 var (
 	file_sys_v1_sys_info_proto_rawDescOnce sync.Once

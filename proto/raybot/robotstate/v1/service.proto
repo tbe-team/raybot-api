@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package robotstate.v1;
+
+import "robotstate/v1/robotstate.proto";
+
+option go_package = "github.com/tbe-team/raybot-api/robotstate/v1";
+
+service RobotStateService {
+  // GetRobotState returns the current robot state.
+  rpc GetRobotState(GetRobotStateRequest) returns (GetRobotStateResponse) {}
+}

@@ -4,7 +4,7 @@ package location.v1;
 
 import "location/v1/location.proto";
 
-option go_package = "github.com/tbe-team/raybot/location/v1";
+option go_package = "github.com/tbe-team/raybot-api/location/v1";
 
 service LocationService {
   // GetLocation returns the current location information.

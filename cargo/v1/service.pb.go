@@ -26,7 +26,7 @@ const file_cargo_v1_service_proto_rawDesc = "" +
 	"\n" +
 	"\x16cargo/v1/service.proto\x12\bcargo.v1\x1a\x14cargo/v1/cargo.proto2S\n" +
 	"\fCargoService\x12C\n" +
-	"\bGetCargo\x12\x19.cargo.v1.GetCargoRequest\x1a\x1a.cargo.v1.GetCargoResponse\"\x00B%Z#github.com/tbe-team/raybot/cargo/v1b\x06proto3"
+	"\bGetCargo\x12\x19.cargo.v1.GetCargoRequest\x1a\x1a.cargo.v1.GetCargoResponse\"\x00B)Z'github.com/tbe-team/raybot-api/cargo/v1b\x06proto3"
 
 var file_cargo_v1_service_proto_goTypes = []any{
 	(*GetCargoRequest)(nil),  // 0: cargo.v1.GetCargoRequest

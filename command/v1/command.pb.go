@@ -649,7 +649,7 @@ const file_command_v1_command_proto_rawDesc = "" +
 	"\rCommandSource\x12\x1e\n" +
 	"\x1aCOMMAND_SOURCE_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14COMMAND_SOURCE_CLOUD\x10\x01\x12\x16\n" +
-	"\x12COMMAND_SOURCE_APP\x10\x02B'Z%github.com/tbe-team/raybot/command/v1b\x06proto3"
+	"\x12COMMAND_SOURCE_APP\x10\x02B+Z)github.com/tbe-team/raybot-api/command/v1b\x06proto3"
 
 var (
 	file_command_v1_command_proto_rawDescOnce sync.Once

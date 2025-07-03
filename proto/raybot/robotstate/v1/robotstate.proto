@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package robotstate.v1;
+
+import "battery/v1/battery.proto";
+import "cargo/v1/cargo.proto";
+import "distancesensor/v1/distance_sensor.proto";
+import "limitswitch/v1/limit_switch.proto";
+import "location/v1/location.proto";
+import "motor/v1/motor.proto";
+
+option go_package = "github.com/tbe-team/raybot-api/robotstate/v1";
+
+message GetRobotStateRequest {}
+
+message GetRobotStateResponse {
+  battery.v1.GetBatteryResponse battery = 1;
+  battery.v1.GetChargeSettingResponse charge_setting = 2;
+  battery.v1.GetDischargeSettingResponse discharge_setting = 3;
+  cargo.v1.GetCargoResponse cargo = 4;
+  distancesensor.v1.GetDistanceSensorResponse distance_sensor = 5;
+  location.v1.GetLocationResponse location = 6;
+  motor.v1.GetDriveMotorResponse drive_motor = 7;
+  motor.v1.GetLiftMotorResponse lift_motor = 8;
+  motor.v1.GetCargoDoorMotorResponse cargo_door_motor = 9;
+  limitswitch.v1.GetLimitSwitch1Response limit_switch_1 = 10;
+}

@@ -204,7 +204,7 @@ const file_limitswitch_v1_limit_switch_proto_rawDesc = "" +
 	"#StreamLimitSwitch1PressEventRequest\"a\n" +
 	"$StreamLimitSwitch1PressEventResponse\x129\n" +
 	"\n" +
-	"pressed_at\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\tpressedAtB+Z)github.com/tbe-team/raybot/limitswitch/v1b\x06proto3"
+	"pressed_at\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\tpressedAtB/Z-github.com/tbe-team/raybot-api/limitswitch/v1b\x06proto3"
 
 var (
 	file_limitswitch_v1_limit_switch_proto_rawDescOnce sync.Once

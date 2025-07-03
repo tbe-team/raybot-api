@@ -4,7 +4,7 @@ package cargo.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/tbe-team/raybot/cargo/v1";
+option go_package = "github.com/tbe-team/raybot-api/cargo/v1";
 
 message GetCargoRequest {}
 

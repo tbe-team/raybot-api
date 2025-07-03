@@ -30,7 +30,7 @@ const file_battery_v1_service_proto_rawDesc = "" +
 	"\n" +
 	"GetBattery\x12\x1d.battery.v1.GetBatteryRequest\x1a\x1e.battery.v1.GetBatteryResponse\"\x00\x12_\n" +
 	"\x10GetChargeSetting\x12#.battery.v1.GetChargeSettingRequest\x1a$.battery.v1.GetChargeSettingResponse\"\x00\x12h\n" +
-	"\x13GetDischargeSetting\x12&.battery.v1.GetDischargeSettingRequest\x1a'.battery.v1.GetDischargeSettingResponse\"\x00B'Z%github.com/tbe-team/raybot/battery/v1b\x06proto3"
+	"\x13GetDischargeSetting\x12&.battery.v1.GetDischargeSettingRequest\x1a'.battery.v1.GetDischargeSettingResponse\"\x00B+Z)github.com/tbe-team/raybot-api/battery/v1b\x06proto3"
 
 var file_battery_v1_service_proto_goTypes = []any{
 	(*GetBatteryRequest)(nil),           // 0: battery.v1.GetBatteryRequest

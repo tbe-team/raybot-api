@@ -495,7 +495,7 @@ const file_motor_v1_motor_proto_rawDesc = "" +
 	"\tDirection\x12\x19\n" +
 	"\x15DIRECTION_UNSPECIFIED\x10\x00\x12\x12\n" +
 	"\x0eDIRECTION_OPEN\x10\x01\x12\x13\n" +
-	"\x0fDIRECTION_CLOSE\x10\x02B%Z#github.com/tbe-team/raybot/motor/v1b\x06proto3"
+	"\x0fDIRECTION_CLOSE\x10\x02B)Z'github.com/tbe-team/raybot-api/motor/v1b\x06proto3"
 
 var (
 	file_motor_v1_motor_proto_rawDescOnce sync.Once

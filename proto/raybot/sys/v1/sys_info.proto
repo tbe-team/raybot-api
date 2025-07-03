@@ -4,7 +4,7 @@ package sys.v1;
 
 import "google/protobuf/duration.proto";
 
-option go_package = "github.com/tbe-team/raybot/sys/v1";
+option go_package = "github.com/tbe-team/raybot-api/sys/v1";
 
 message GetSysInfoRequest {}
 

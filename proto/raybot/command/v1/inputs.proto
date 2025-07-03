@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package command.v1;
 
-option go_package = "github.com/tbe-team/raybot/command/v1";
+option go_package = "github.com/tbe-team/raybot-api/command/v1";
 
 message CommandInputs {
   oneof inputs {

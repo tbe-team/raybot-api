@@ -925,7 +925,7 @@ const file_command_v1_inputs_proto_rawDesc = "" +
 	"\n" +
 	"WaitInputs\x12\x1f\n" +
 	"\vduration_ms\x18\x01 \x01(\x03R\n" +
-	"durationMsB'Z%github.com/tbe-team/raybot/command/v1b\x06proto3"
+	"durationMsB+Z)github.com/tbe-team/raybot-api/command/v1b\x06proto3"
 
 var (
 	file_command_v1_inputs_proto_rawDescOnce sync.Once

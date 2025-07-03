@@ -6,7 +6,7 @@ import "command/v1/inputs.proto";
 import "command/v1/outputs.proto";
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/tbe-team/raybot/command/v1";
+option go_package = "github.com/tbe-team/raybot-api/command/v1";
 
 message CreateCommandRequest {
   CommandType type = 1;

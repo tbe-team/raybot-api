@@ -26,7 +26,7 @@ const file_distancesensor_v1_service_proto_rawDesc = "" +
 	"\n" +
 	"\x1fdistancesensor/v1/service.proto\x12\x11distancesensor.v1\x1a'distancesensor/v1/distance_sensor.proto2\x89\x01\n" +
 	"\x15DistanceSensorService\x12p\n" +
-	"\x11GetDistanceSensor\x12+.distancesensor.v1.GetDistanceSensorRequest\x1a,.distancesensor.v1.GetDistanceSensorResponse\"\x00B.Z,github.com/tbe-team/raybot/distancesensor/v1b\x06proto3"
+	"\x11GetDistanceSensor\x12+.distancesensor.v1.GetDistanceSensorRequest\x1a,.distancesensor.v1.GetDistanceSensorResponse\"\x00B2Z0github.com/tbe-team/raybot-api/distancesensor/v1b\x06proto3"
 
 var file_distancesensor_v1_service_proto_goTypes = []any{
 	(*GetDistanceSensorRequest)(nil),  // 0: distancesensor.v1.GetDistanceSensorRequest

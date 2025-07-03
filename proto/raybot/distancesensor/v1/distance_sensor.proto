@@ -4,7 +4,7 @@ package distancesensor.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/tbe-team/raybot/distancesensor/v1";
+option go_package = "github.com/tbe-team/raybot-api/distancesensor/v1";
 
 message GetDistanceSensorRequest {}
 

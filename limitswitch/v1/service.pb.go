@@ -27,7 +27,7 @@ const file_limitswitch_v1_service_proto_rawDesc = "" +
 	"\x1climitswitch/v1/service.proto\x12\x0elimitswitch.v1\x1a!limitswitch/v1/limit_switch.proto2\x8a\x02\n" +
 	"\x12LimitSwitchService\x12d\n" +
 	"\x0fGetLimitSwitch1\x12&.limitswitch.v1.GetLimitSwitch1Request\x1a'.limitswitch.v1.GetLimitSwitch1Response\"\x00\x12\x8d\x01\n" +
-	"\x1cStreamLimitSwitch1PressEvent\x123.limitswitch.v1.StreamLimitSwitch1PressEventRequest\x1a4.limitswitch.v1.StreamLimitSwitch1PressEventResponse\"\x000\x01B+Z)github.com/tbe-team/raybot/limitswitch/v1b\x06proto3"
+	"\x1cStreamLimitSwitch1PressEvent\x123.limitswitch.v1.StreamLimitSwitch1PressEventRequest\x1a4.limitswitch.v1.StreamLimitSwitch1PressEventResponse\"\x000\x01B/Z-github.com/tbe-team/raybot-api/limitswitch/v1b\x06proto3"
 
 var file_limitswitch_v1_service_proto_goTypes = []any{
 	(*GetLimitSwitch1Request)(nil),               // 0: limitswitch.v1.GetLimitSwitch1Request

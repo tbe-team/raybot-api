@@ -4,7 +4,7 @@ package motor.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/tbe-team/raybot/motor/v1";
+option go_package = "github.com/tbe-team/raybot-api/motor/v1";
 
 message GetDriveMotorRequest {}
 
